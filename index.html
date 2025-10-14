@@ -28,8 +28,24 @@
     /* Paragraphs */
     p { margin-bottom:15px; }
 
+    /* Timeline */
+    .timeline { position: relative; padding: 20px 0; }
+    .timeline::before { content: ''; position: absolute; left: 50%; width: 4px; background: #1a73e8; top:0; bottom:0; transform: translateX(-50%); }
+    .timeline-event { position: relative; width: 45%; padding: 20px; background:#fff; border-radius:8px; margin:20px 0; box-shadow:0 2px 5px rgba(0,0,0,0.2); }
+    .timeline-event img { max-width:100%; border-radius:5px; margin-bottom:10px; }
+    .timeline-event-left { left:0; }
+    .timeline-event-right { left:55%; }
+    .timeline-event::after { content:''; position:absolute; width:20px; height:20px; background:#1a73e8; border-radius:50%; top:20px; right:-10px; }
+    .timeline-event-left::after { left:-10px; right:auto; }
+
     /* Footer */
     footer { background-color:#333; color:#fff; text-align:center; padding:20px 0; margin-top:40px; }
+
+    /* Responsive */
+    @media(max-width:768px) {
+        .timeline-event, .timeline-event-left, .timeline-event-right { width:90%; left:5% !important; }
+        .timeline-event::after, .timeline-event-left::after, .timeline-event-right::after { left:50%; transform:translateX(-50%); }
+    }
 </style>
 </head>
 <body>
@@ -72,6 +88,32 @@
             <li>Hardship and homelessness increased</li>
         </ul>
         <p>Germany was the first European country to fall into the Great Depression. Britain, France, Southeast Asia, Brazil, Canada, and others were later affected. Canada arguably suffered the most among these nations.</p>
+    </section>
+
+    <section>
+        <h2>Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-event timeline-event-left">
+                <img src="Pic/1.jpg" alt="Wall Street Crash 1929">
+                <h3>1929 - Wall Street Crash</h3>
+                <p>The U.S. stock market crashed in October 1929, marking the start of the Great Depression.</p>
+            </div>
+            <div class="timeline-event timeline-event-right">
+                <img src="Pic/2.jpg" alt="Unemployment during Great Depression">
+                <h3>1930-1933 - Unemployment Rises</h3>
+                <p>Millions of people lost jobs worldwide, with unemployment rates soaring in the U.S. and Europe.</p>
+            </div>
+            <div class="timeline-event timeline-event-left">
+                <img src="Pic/3.jpg" alt="Farmers during Great Depression">
+                <h3>1930s - Agriculture Crisis</h3>
+                <p>Farmers faced plummeting crop prices and many lost their farms due to foreclosure.</p>
+            </div>
+            <div class="timeline-event timeline-event-right">
+                <img src="Pic/4.jpg" alt="FDR New Deal">
+                <h3>1933 - New Deal</h3>
+                <p>U.S. President Franklin D. Roosevelt introduced the New Deal programs to help economic recovery.</p>
+            </div>
+        </div>
     </section>
 </div>
 
